@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gifulvi <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: gifulvi <gifulvi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/07 16:18:31 by gifulvi           #+#    #+#             */
-/*   Updated: 2022/03/07 16:27:55 by gifulvi          ###   ########.fr       */
+/*   Updated: 2022/03/11 17:53:49 by gifulvi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strlen(char *str)
+int	ft_strlen(const char *str)
 {
 	int	cont;
 

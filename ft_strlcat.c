@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gifulvi <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: gifulvi <gifulvi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/07 16:07:11 by gifulvi           #+#    #+#             */
-/*   Updated: 2022/03/07 16:25:26 by gifulvi          ###   ########.fr       */
+/*   Updated: 2022/03/12 15:07:41 by gifulvi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,28 +22,26 @@ int	ft_strlen(char *s)
 	return (cont);
 }
 
-unsigned int	ft_strlcat(char *dest, char *src, unsigned int size)
+unsigned int	ft_strlcat(const char *dest, const char *src, unsigned int size)
 {
 	unsigned int	i;
 	unsigned int	j;
-	unsigned int	res_d;
-	unsigned int	res_s;
+	char			*temp;
 
-	i = ft_strlen(dest);
+	i = ft_strlen((char *)dest);
 	j = 0;
-	res_d = ft_strlen(dest);
-	res_s = ft_strlen(src);
+	temp = (char *)dest;
 	if (size < 1)
-		return (res_s + size);
+		return (ft_strlen((char *)src) + size);
 	while (src[j] && i < size - 1)
 	{
-		dest[i] = src[j];
+		temp[i] = src[j];
 		i++;
 		j++;
 	}
-	dest[i] = '\0';
-	if (size < res_d)
-		return (res_s + size);
+	temp[i] = '\0';
+	if ((int)size < (ft_strlen((char *)dest)))
+		return (ft_strlen((char *)src) + size);
 	else
-		return (res_d + res_s);
+		return (ft_strlen((char *)dest) + ft_strlen((char *)src));
 }

@@ -27,5 +27,6 @@ char	*ft_substr(const char *s, unsigned int start, int len)
 		i++;
 		start++;
 	}
+	sub[i] = '\0';
 	return (head);
 }

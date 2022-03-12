@@ -6,40 +6,40 @@
 /*   By: gifulvi <gifulvi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 12:02:51 by gifulvi           #+#    #+#             */
-/*   Updated: 2022/03/10 11:53:26 by gifulvi          ###   ########.fr       */
+/*   Updated: 2022/03/12 15:15:27 by gifulvi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_compare(const char *str, const char *to_find, int len)
+int	ft_compare(const char *haystack, const char *needle, int loc)
 {
-	while (*str && *to_find && len)
+	while (*haystack && *needle && loc)
 	{
-		if (*str != *to_find)
+		if (*haystack != *needle)
 		{
 			return (0);
 		}
-		str++;
-		to_find++;
-		len--;
+		haystack++;
+		needle++;
+		loc--;
 	}
-	return (*to_find == '\0');
+	return (*needle == '\0');
 }
 
-char	*ft_strnstr(const char *str, const char *to_find, int len)
+char	*ft_strnstr(const char *haystack, const char *needle, int loc)
 {
 	int	i;
 
 	i = 0;
-	if (*to_find == '\0')
-		return ((char *)str);
-	while (*str != '\0' && len)
+	if (*needle == '\0')
+		return ((char *)haystack);
+	while (*haystack != '\0' && loc)
 	{
-		if ((*str == *to_find) && ft_compare(str, to_find, len))
+		if ((*haystack == *needle) && ft_compare(haystack, needle, loc))
 		{
-			return ((char *)str);
+			return ((char *)haystack);
 		}
-		str++;
-		len--;
+		haystack++;
+		loc--;
 	}
 	return (0);
 }

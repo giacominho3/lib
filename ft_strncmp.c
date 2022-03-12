@@ -6,11 +6,11 @@
 /*   By: gifulvi <gifulvi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 11:47:19 by gifulvi           #+#    #+#             */
-/*   Updated: 2022/03/09 11:59:02 by gifulvi          ###   ########.fr       */
+/*   Updated: 2022/03/11 17:54:40 by gifulvi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strncmp(char *s1, char *s2, unsigned int n)
+int	ft_strncmp(const char *s1, const char *s2, unsigned int n)
 {
 	while ((*s1 || *s2) && n--)
 	{

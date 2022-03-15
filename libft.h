@@ -6,7 +6,7 @@
 /*   By: gifulvi <gifulvi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/10 16:40:19 by gifulvi           #+#    #+#             */
-/*   Updated: 2022/03/10 16:40:22 by gifulvi          ###   ########.fr       */
+/*   Updated: 2022/03/14 16:26:25 by gifulvi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,5 +41,7 @@ char			*ft_strjoin(const char *s1, const char *s2);
 char			*ft_strtrim(const char *s1, const char *set);
 char			**ft_split(char **str);
 char			*ft_itoa(int n);
+char			*ft_strmapi(const char *s, char (*f)(unsigned int, char));
+char			*ft_striteri(const char *s, char (*f)(char));
 
 #endif

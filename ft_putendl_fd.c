@@ -1,21 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
+/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gifulvi <gifulvi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/15 10:33:10 by gifulvi           #+#    #+#             */
-/*   Updated: 2022/03/15 10:42:48 by gifulvi          ###   ########.fr       */
+/*   Created: 2022/03/15 11:06:53 by gifulvi           #+#    #+#             */
+/*   Updated: 2022/03/15 11:07:55 by gifulvi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-void	ft_putchar_fd(char c, int fd)
+void	ft_putendl_fd(char *s, int fd)
 {
+	char	nl;
+
+	nl = '\n';
 	if (fd == -1)
 		return ;
-	if (c >= 0 && c <= 127)
-		write (fd, &c, 1);
+	while (*s)
+	{
+		write (fd, s, 1);
+		s++;
+	}
+	write (fd, &nl, 1);
 }

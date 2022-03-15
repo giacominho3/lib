@@ -1,35 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_lstsize.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gifulvi <gifulvi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/09 16:48:05 by gifulvi           #+#    #+#             */
-/*   Updated: 2022/03/15 17:46:47 by gifulvi          ###   ########.fr       */
+/*   Created: 2022/03/15 15:47:45 by gifulvi           #+#    #+#             */
+/*   Updated: 2022/03/15 16:05:10 by gifulvi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdlib.h>
 
-char	*ft_strdup(const char *s)
+int	ft_lstsize(t_list *lst)
 {
-	char	*dup;
-	char	*temp;
-	char	*head;
+	int	size;
 
-	temp = (char *)s;
-	dup = (char *)malloc(ft_strlen(temp) + 1);
-	if (!dup)
-		return (0);
-	head = dup;
-	while (*temp)
+	size = 0;
+	while (lst)
 	{
-		*dup = *temp;
-		dup++;
-		temp++;
+		size++;
+		lst = lst->next;
 	}
-	*dup = '\0';
-	return (head);
+	return (size);
 }

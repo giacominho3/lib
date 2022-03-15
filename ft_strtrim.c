@@ -6,24 +6,12 @@
 /*   By: gifulvi <gifulvi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/10 11:43:59 by gifulvi           #+#    #+#             */
-/*   Updated: 2022/03/10 16:38:41 by gifulvi          ###   ########.fr       */
+/*   Updated: 2022/03/15 16:57:25 by gifulvi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 #include <stdlib.h>
-
-int	ft_strlen(char *str)
-{
-	int	cont;
-
-	cont = 0;
-	while (*str)
-	{
-		cont++;
-		str++;
-	}
-	return (cont);
-}
 
 int	inizio(const char *s1, const char *set)
 {

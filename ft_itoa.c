@@ -6,7 +6,7 @@
 /*   By: gifulvi <gifulvi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/10 14:36:43 by gifulvi           #+#    #+#             */
-/*   Updated: 2022/03/10 16:32:33 by gifulvi          ###   ########.fr       */
+/*   Updated: 2022/03/15 18:03:43 by gifulvi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,12 +63,20 @@ char	*ft_itoa(int n)
 	char	*str;
 
 	if (n == -2147483648)
-		return ("-2147483648");
+	{
+		str = malloc(12);
+		if (!str)
+			return (0);
+		str = "-2147483648";
+		return (str);
+	}
 	len = 0;
 	if (n < 0)
 		len++;
 	len += ft_get_length(n);
 	str = (char *)malloc(len + 1);
+	if (!str)
+		return (0);
 	ft_fill_string(str, n, len);
 	str[len] = '\0';
 	return (str);

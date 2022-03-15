@@ -3,25 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gifulvi <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: gifulvi <gifulvi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/07 16:19:21 by gifulvi           #+#    #+#             */
-/*   Updated: 2022/03/07 16:25:50 by gifulvi          ###   ########.fr       */
+/*   Updated: 2022/03/15 16:58:33 by gifulvi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strlen(char *str)
-{
-	int	cont;
-
-	cont = 0;
-	while (*str)
-	{
-		cont++;
-		str++;
-	}
-	return (cont);
-}
+#include "libft.h"
 
 char	*ft_strrchr(const char *s, int c)
 {

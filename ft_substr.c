@@ -10,6 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 #include <stdlib.h>
 
 char	*ft_substr(const char *s, unsigned int start, int len)
@@ -19,8 +20,12 @@ char	*ft_substr(const char *s, unsigned int start, int len)
 	int		i;
 
 	sub = (char *)malloc(len + 1);
+	if (!sub)
+		return (0);
 	head = sub;
 	i = 0;
+	if ((int)start >= ft_strlen((char *)s))
+		return (0);
 	while ((i < len) && (s[start] != '\0'))
 	{
 		sub[i] = s[start];

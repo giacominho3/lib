@@ -6,7 +6,7 @@
 /*   By: gifulvi <gifulvi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 12:47:25 by gifulvi           #+#    #+#             */
-/*   Updated: 2022/03/12 16:54:34 by gifulvi          ###   ########.fr       */
+/*   Updated: 2022/03/16 12:43:59 by gifulvi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,5 +31,8 @@ int	ft_atoi(const char *str)
 		value += *str - '0';
 		str++;
 	}
-	return (value * sign);
+	value *= sign;
+	if (value < -2147483648 || value > 2147483647)
+		return (-1);
+	return (value);
 }

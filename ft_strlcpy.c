@@ -3,17 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gifulvi <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: gifulvi <gifulvi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/07 16:07:11 by gifulvi           #+#    #+#             */
-/*   Updated: 2022/03/07 16:27:31 by gifulvi          ###   ########.fr       */
+/*   Updated: 2022/03/16 18:47:08 by gifulvi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-unsigned int	ft_strlcpy(char *dest, char *src, unsigned int size)
+#include <stdlib.h>
+
+size_t	ft_strlcpy(char *dest, char *src, size_t size)
 {
-	unsigned int	count;
-	unsigned int	index;
+	size_t	count;
+	size_t	index;
 
 	count = 0;
 	index = 0;

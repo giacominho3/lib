@@ -6,7 +6,7 @@
 /*   By: gifulvi <gifulvi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 17:44:41 by gifulvi           #+#    #+#             */
-/*   Updated: 2022/03/15 17:47:46 by gifulvi          ###   ########.fr       */
+/*   Updated: 2022/03/16 18:06:24 by gifulvi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ char	*ft_strjoin(const char *s1, const char *s2)
 	l1 = ft_strlen((char *)s1);
 	l2 = ft_strlen((char *)s2);
 	conc = (char *)malloc(l1 + l2 + 1);
-	if (!conc)
+	if (conc == 0)
 		return (0);
 	i = 0;
 	j = 0;

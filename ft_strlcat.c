@@ -6,35 +6,38 @@
 /*   By: gifulvi <gifulvi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/07 16:07:11 by gifulvi           #+#    #+#             */
-/*   Updated: 2022/03/14 12:42:49 by gifulvi          ###   ########.fr       */
+/*   Updated: 2022/03/17 12:40:07 by gifulvi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strlcat(char *dest, const char *src, int size)
-{
-	int	x;
-	int	y;
-	int	z;
+#include <stdlib.h>
+#include "libft.h"
 
-	x = 0;
-	y = 0;
-	z = 0;
-	while (dest[x] != '\0')
-		x++;
-	while (src[y] != '\0')
+size_t	ft_strlcat(char *dest, const char *src, size_t size)
+{
+	char	*dst;
+	char	*src_start;
+	size_t	dst_length;
+	size_t	remaing;
+
+	dst = dest;
+	src_start = (char *) src;
+	remaing = size;
+	while (remaing-- != 0 && *dst != '\0')
+		dst++;
+	dst_length = dst - dest;
+	remaing = size - dst_length;
+	if (remaing == 0)
+		return (dst_length + ft_strlen((char *) src));
+	while (*src != '\0')
 	{
-		y++;
+		if (remaing > 1)
+		{
+			*dst++ = *src;
+			remaing--;
+		}
+		src++;
 	}
-	if (size <= x)
-		y = y + size;
-	else
-		y = y + x;
-	while (src[z] != '\0' && (x + 1) < size)
-	{
-		dest[x] = src[z];
-		x++;
-		z++;
-	}
-	dest[x] = '\0';
-	return (y);
+	*dst = '\0';
+	return (dst_length + (src - src_start));
 }

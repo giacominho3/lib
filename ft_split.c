@@ -6,7 +6,7 @@
 /*   By: gifulvi <gifulvi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/10 12:50:35 by gifulvi           #+#    #+#             */
-/*   Updated: 2022/03/14 17:43:27 by gifulvi          ###   ########.fr       */
+/*   Updated: 2022/03/17 12:39:03 by gifulvi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,8 +47,6 @@ int	ft_count_seps(char *str, char sep)
 	}
 	if (ft_is_separator(str[0], sep) && ft_not_all_seps(str, sep))
 		cont--;
-	if (!(ft_not_all_seps(str, sep)))
-		return (0);
 	return (cont + 1);
 }
 
@@ -74,16 +72,22 @@ char	**ft_split(char *s, char c)
 	int		j;
 	char	**array;
 
+	if (!s)
+		return (0);
 	sep = ft_count_seps(s, c);
 	i = 0;
 	array = malloc((sep + 1) * sizeof(char *));
+	if (!array)
+		return (0);
 	while (i < sep)
 	{
 		while (ft_is_separator(*s, c))
 			s++;
 		array[i] = malloc(ft_till_next_sep(s, c) + 1);
+		if (&array[i] == 0)
+			return (0);
 		j = 0;
-		while (!(ft_is_separator(*s, c)))
+		while (!(ft_is_separator(*s, c)) && *s)
 		{
 			array[i][j] = *s;
 			j++;
@@ -95,3 +99,11 @@ char	**ft_split(char *s, char c)
 	array[i] = 0;
 	return (array);
 }
+
+// int main()
+// {
+// 	char	**a = ft_split("\0aa\0bbb", '\0');
+// 	for (int i = 0; a[i]; i++)
+// 		printf("%s\n", a[i]);
+
+// }

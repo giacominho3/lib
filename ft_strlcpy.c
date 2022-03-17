@@ -6,11 +6,11 @@
 /*   By: gifulvi <gifulvi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/07 16:07:11 by gifulvi           #+#    #+#             */
-/*   Updated: 2022/03/16 18:47:08 by gifulvi          ###   ########.fr       */
+/*   Updated: 2022/03/17 17:29:51 by gifulvi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "libft.h"
 
 size_t	ft_strlcpy(char *dest, char *src, size_t size)
 {

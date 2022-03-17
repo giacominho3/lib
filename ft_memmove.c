@@ -6,12 +6,11 @@
 /*   By: gifulvi <gifulvi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 15:45:47 by gifulvi           #+#    #+#             */
-/*   Updated: 2022/03/17 14:21:50 by gifulvi          ###   ########.fr       */
+/*   Updated: 2022/03/17 17:27:58 by gifulvi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
-#include <stdio.h>
+#include "libft.h"
 
 void	*ft_memmove(void *str1, const void *str2, size_t n)
 {

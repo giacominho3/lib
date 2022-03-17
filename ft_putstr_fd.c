@@ -6,11 +6,11 @@
 /*   By: gifulvi <gifulvi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/15 11:00:33 by gifulvi           #+#    #+#             */
-/*   Updated: 2022/03/17 14:48:12 by gifulvi          ###   ########.fr       */
+/*   Updated: 2022/03/17 17:35:24 by gifulvi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include "libft.h"
 
 void	ft_putstr_fd(char *s, int fd)
 {

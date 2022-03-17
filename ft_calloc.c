@@ -6,12 +6,11 @@
 /*   By: gifulvi <gifulvi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 14:16:06 by gifulvi           #+#    #+#             */
-/*   Updated: 2022/03/15 17:35:11 by gifulvi          ###   ########.fr       */
+/*   Updated: 2022/03/17 17:27:00 by gifulvi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdlib.h>
 
 void	*ft_calloc(int count, int size)
 {

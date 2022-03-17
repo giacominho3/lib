@@ -6,12 +6,11 @@
 /*   By: gifulvi <gifulvi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/10 12:50:35 by gifulvi           #+#    #+#             */
-/*   Updated: 2022/03/17 12:39:03 by gifulvi          ###   ########.fr       */
+/*   Updated: 2022/03/17 17:33:03 by gifulvi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-#include <stdio.h>
+#include "libft.h"
 
 int	ft_is_separator(char c, char sep)
 {
@@ -65,13 +64,15 @@ int	ft_till_next_sep(char *str, char sep)
 	return (cont);
 }
 
-char	**ft_split(char *s, char c)
+char	**ft_split(const char *str, char c)
 {
 	int		sep;
 	int		i;
 	int		j;
 	char	**array;
+	char	*s;
 
+	s = (char *)str;
 	if (!s)
 		return (0);
 	sep = ft_count_seps(s, c);

@@ -6,11 +6,11 @@
 /*   By: gifulvi <gifulvi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/15 11:13:26 by gifulvi           #+#    #+#             */
-/*   Updated: 2022/03/15 11:18:50 by gifulvi          ###   ########.fr       */
+/*   Updated: 2022/03/17 17:35:15 by gifulvi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include "libft.h"
 
 void	printer(char c, int fd)
 {

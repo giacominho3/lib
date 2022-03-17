@@ -6,11 +6,10 @@
 /*   By: gifulvi <gifulvi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/10 14:36:43 by gifulvi           #+#    #+#             */
-/*   Updated: 2022/03/17 13:00:40 by gifulvi          ###   ########.fr       */
+/*   Updated: 2022/03/17 17:27:12 by gifulvi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
 #include "libft.h"
 
 int	lenght(int nb, int base)

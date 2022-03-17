@@ -6,13 +6,14 @@
 /*   By: gifulvi <gifulvi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/10 16:40:19 by gifulvi           #+#    #+#             */
-/*   Updated: 2022/03/17 15:14:17 by gifulvi          ###   ########.fr       */
+/*   Updated: 2022/03/17 17:34:09 by gifulvi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 # include <stdlib.h>
+# include <unistd.h>
 
 typedef struct s_list
 {
@@ -32,7 +33,7 @@ int		ft_toupper(int c);
 int		ft_tolower(int c);
 char	*ft_strchr(const char *s, int c);
 char	*ft_strrchr(const char *s, int c);
-int		ft_strncmp(char *s1, char *s2, size_t n);
+int		ft_strncmp(const char *s1, const char *s2, size_t n);
 char	*ft_strnstr(char *str, char *to_find, int len);
 int		ft_atoi(char *str);
 void	*ft_memset(void *b, int c, int len);

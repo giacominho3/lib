@@ -6,7 +6,7 @@
 /*   By: gifulvi <gifulvi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 12:02:51 by gifulvi           #+#    #+#             */
-/*   Updated: 2022/03/12 15:15:27 by gifulvi          ###   ########.fr       */
+/*   Updated: 2022/03/17 14:56:56 by gifulvi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,9 +27,6 @@ int	ft_compare(const char *haystack, const char *needle, int loc)
 
 char	*ft_strnstr(const char *haystack, const char *needle, int loc)
 {
-	int	i;
-
-	i = 0;
 	if (*needle == '\0')
 		return ((char *)haystack);
 	while (*haystack != '\0' && loc)

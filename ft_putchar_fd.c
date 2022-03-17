@@ -6,7 +6,7 @@
 /*   By: gifulvi <gifulvi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/15 10:33:10 by gifulvi           #+#    #+#             */
-/*   Updated: 2022/03/15 10:42:48 by gifulvi          ###   ########.fr       */
+/*   Updated: 2022/03/17 14:48:36 by gifulvi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,6 @@
 
 void	ft_putchar_fd(char c, int fd)
 {
-	if (fd == -1)
-		return ;
 	if (c >= 0 && c <= 127)
 		write (fd, &c, 1);
 }

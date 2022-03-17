@@ -6,7 +6,7 @@
 /*   By: gifulvi <gifulvi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/10 16:40:19 by gifulvi           #+#    #+#             */
-/*   Updated: 2022/03/17 14:21:26 by gifulvi          ###   ########.fr       */
+/*   Updated: 2022/03/17 15:14:17 by gifulvi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,8 +48,8 @@ char	*ft_strjoin(const char *s1, const char *s2);
 char	*ft_strtrim(const char *s1, const char *set);
 char	**ft_split(const char *s, char c);
 char	*ft_itoa(int n);
-char	*ft_strmapi(const char *s, char (*f)(size_t, char));
-char	*ft_striteri(const char *s, char (*f)(char));
+char	*ft_strmapi(const char *s, char (*f)(unsigned int, char));
+void	ft_striteri(char *s, void (*f)(unsigned int, char *));
 void	ft_putchar_fd(char c, int fd);
 void	ft_putstr_fd(char *s, int fd);
 void	ft_putendl_fd(char *s, int fd);

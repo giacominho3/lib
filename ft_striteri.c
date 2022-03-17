@@ -6,28 +6,22 @@
 /*   By: gifulvi <gifulvi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/14 16:24:56 by gifulvi           #+#    #+#             */
-/*   Updated: 2022/03/15 17:02:38 by gifulvi          ###   ########.fr       */
+/*   Updated: 2022/03/17 15:14:13 by gifulvi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdlib.h>
 
-char	*ft_striteri(const char *s, char (*f)(char))
+void	ft_striteri(char *s, void (*f)(unsigned int, char *))
 {
-	char	*mod;
-	char	*head;
+	int	i;
 
-	if (s == 0 || f == 0)
-		return (0);
-	mod = malloc(ft_strlen((char *)s) + 1);
-	head = mod;
-	while (*s)
+	i = 0;
+	if (!(s && f))
+		return ;
+	while (s[i])
 	{
-		*mod = (*f)(*s);
-		s++;
-		mod++;
+		(*f)(i, &s[i]);
+		i++;
 	}
-	*mod = '\0';
-	return (head);
 }

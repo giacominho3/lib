@@ -6,105 +6,55 @@
 /*   By: gifulvi <gifulvi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/10 12:50:35 by gifulvi           #+#    #+#             */
-/*   Updated: 2022/03/17 17:33:03 by gifulvi          ###   ########.fr       */
+/*   Updated: 2022/03/21 14:56:09 by gifulvi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_is_separator(char c, char sep)
+static size_t	get_word(const char *s, char c)
 {
-	if (c == sep)
-		return (1);
-	else
-		return (0);
-}
+	size_t	ret;
 
-int	ft_not_all_seps(char *str, char sep)
-{
-	while (*str != '\0')
+	ret = 0;
+	while (*s)
 	{
-		if (!(ft_is_separator(*str, sep)))
-			return (1);
-		str++;
+		if (*s != c)
+		{
+			++ret;
+			while (*s && *s != c)
+				++s;
+		}
+		else
+			++s;
 	}
-	return (0);
+	return (ret);
 }
 
-int	ft_count_seps(char *str, char sep)
+char	**ft_split(const char *s, char c)
 {
-	int	cont;
-	int	i;
+	char	**ret;
+	size_t	i;
+	size_t	len;
 
-	cont = 0;
-	i = 1;
-	while (str[i] != '\0')
-	{
-		if (ft_is_separator(str[i - 1], sep) && !(ft_is_separator(str[i], sep)))
-			cont++;
-		i++;
-	}
-	if (ft_is_separator(str[0], sep) && ft_not_all_seps(str, sep))
-		cont--;
-	return (cont + 1);
-}
-
-int	ft_till_next_sep(char *str, char sep)
-{
-	int	cont;
-
-	cont = 0;
-	while (ft_is_separator(*str, sep))
-			str++;
-	while (!(ft_is_separator(*str, sep)) && *str)
-	{
-		cont++;
-		str++;
-	}
-	return (cont);
-}
-
-char	**ft_split(const char *str, char c)
-{
-	int		sep;
-	int		i;
-	int		j;
-	char	**array;
-	char	*s;
-
-	s = (char *)str;
 	if (!s)
 		return (0);
-	sep = ft_count_seps(s, c);
 	i = 0;
-	array = malloc((sep + 1) * sizeof(char *));
-	if (!array)
+	ret = malloc(sizeof(char *) * (get_word(s, c) + 1));
+	if (!ret)
 		return (0);
-	while (i < sep)
+	while (*s)
 	{
-		while (ft_is_separator(*s, c))
-			s++;
-		array[i] = malloc(ft_till_next_sep(s, c) + 1);
-		if (&array[i] == 0)
-			return (0);
-		j = 0;
-		while (!(ft_is_separator(*s, c)) && *s)
+		if (*s != c)
 		{
-			array[i][j] = *s;
-			j++;
-			s++;
+			len = 0;
+			while (*s && *s != c && ++len)
+				++s;
+			ret[i++] = ft_substr(s - len, 0, len);
 		}
-		array[i][j] = '\0';
-		i++;
+		else
+			++s;
 	}
-	array[i] = 0;
-	return (array);
+	ret[i] = 0;
+	return (ret);
 }
-
-// int main()
-// {
-// 	char	**a = ft_split("\0aa\0bbb", '\0');
-// 	for (int i = 0; a[i]; i++)
-// 		printf("%s\n", a[i]);
-
-// }
